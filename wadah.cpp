@@ -15,11 +15,7 @@ int main() {
             posisiKolom++;
         } else if (tombol == KEY_LEFT) {
             posisiKolom--;
-        } else if (tombol == KEY_UP) {
-            posisiBaris--;
-        } else if (tombol == KEY_DOWN) {
-            posisiBaris++;
-        }
+        } 
         clear();
         mvprintw (posisiBaris, posisiKolom, "[======]");
         refresh;
