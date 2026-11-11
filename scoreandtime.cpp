@@ -1,3 +1,4 @@
+//bagian ardi 
 #include <ncurses.h>
 #include <ctime>
 
@@ -42,4 +43,4 @@ int main() {
     endwin(); 
 
     return 0;
-}//bagian ardi
+}
