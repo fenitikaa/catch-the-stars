@@ -9,8 +9,7 @@ int main() {
 
     int score = 0;
     int timer = 8;
-
-    
+ 
     time_t start = time(0);
 
     while (timer > 0) {
@@ -25,22 +24,12 @@ int main() {
 
         refresh();
 
-        clear();
-
         napms(200);
-
     }
 
-    clear();
-
-    mvprintw(5, 7, "GAME OVER!");
-    mvprintw(8, 7, "Final Score: %d", score);
-
-    refresh();
-
-    napms(5000);
-
-    endwin(); 
-
-    return 0;
-}
+        clear();
+    
+        endwin();
+    
+        return 0;
+    }
