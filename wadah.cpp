@@ -11,6 +11,10 @@ int main() {
     int posisiBaris = 33;
     
     do {
+        mvprintw (2, 12, "==============================");
+        mvprintw (3, 12, "| Welcome to Catch the Star  |");
+        mvprintw (4, 12, "==============================");
+        mvprintw (5, 12, "create by feni, ardi, & rangga");
         tombol = getch();
         if (tombol == KEY_RIGHT) {
             posisiKolom++;
