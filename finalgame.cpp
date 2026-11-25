@@ -26,12 +26,15 @@ int main() {
         kolomBintang[i] = rand() % 40 + 25;
     }
 
-    while (TRUE) {
+    do {
         // ==================== BAGIAN FENI ====================
         // Kontrol wadah pemain
         int tombol = getch();
-        if (tombol == KEY_RIGHT && posisiKolom < 71) posisiKolom++;
-        if (tombol == KEY_LEFT && posisiKolom > 1) posisiKolom--;
+        if (tombol == KEY_RIGHT && posisiKolom < 71) {
+            posisiKolom++; 
+        } else if (tombol == KEY_LEFT && posisiKolom > 1) {
+            posisiKolom--; 
+        }
 
         // ==================== BAGIAN RANGGA ====================
         // Gerak jatuh bintang dan reset posisi acak
@@ -59,5 +62,8 @@ int main() {
         mvwprintw(arena, posisiBaris, posisiKolom, "[======]");
         wrefresh(arena);
         napms(20);
-    }
+    } while (TRUE);
+
+    endwin();
+    return 0;
 }
