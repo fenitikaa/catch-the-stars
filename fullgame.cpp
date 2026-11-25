@@ -1,5 +1,5 @@
 //Catch The Star (Final)
-#include "ncurses.h"
+#include "ncurses/curses.h" 
 using namespace std;
 int main() {
     initscr();
@@ -7,7 +7,7 @@ int main() {
     keypad(stdscr, TRUE);
 
     WINDOW *arena = newwin(35, 80, 0, 0);
-
+// apala
     int tombol;
     int posisiKolom = 12;
     int posisiBaris = 33;
