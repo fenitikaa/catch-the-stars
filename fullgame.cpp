@@ -1,11 +1,10 @@
-//Catch The Star (Final)
-#include "ncurses/curses.h" 
+//Catch The Star (Full)
+#include "ncurses/curses.h"
 using namespace std;
 int main() {
     initscr();
-    clear();
-    keypad(stdscr, TRUE); 
-
+    clear(); S
+//hhhhh
     WINDOW *arena = newwin(35, 80, 0, 0);
 
     int tombol;
@@ -37,6 +36,4 @@ int main() {
     
     endwin();
     return 0;
-
 }
-
