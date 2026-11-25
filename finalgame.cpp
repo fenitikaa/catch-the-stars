@@ -6,6 +6,7 @@
 int main() {
     initscr();
     clear();
+    curs_set(0);
     keypad(stdscr, TRUE);
     nodelay(stdscr, TRUE);
     srand(time(0));
