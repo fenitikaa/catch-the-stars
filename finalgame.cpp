@@ -10,38 +10,35 @@ int main() {
     nodelay(stdscr, TRUE);
     srand(time(0));
 
-    // BAGIAN FENI 
+    // ==================== BAGIAN FENI ====================
     // Arena dan posisi wadah pemain
     WINDOW *arena = newwin(35, 80, 0, 0);
     int posisiKolom = 12;
     int posisiBaris = 33;
     int hitunganFrame = 0;
 
-    // BAGIAN RANGGA
+    // ==================== BAGIAN RANGGA ====================
     // Lima bintang dengan posisi dan gerak jatuh acak
     int barisBintang[5], kolomBintang[5];
 
     for (int i = 0; i < 5; i++) {
-        barisBintang[i] = rand() % 32;
+        barisBintang[i] = rand() % 34;
         kolomBintang[i] = rand() % 40 + 25;
     }
 
     while (TRUE) {
-        // BAGIAN FENI
+        // ==================== BAGIAN FENI ====================
         // Kontrol wadah pemain
         int tombol = getch();
-        if (tombol == KEY_RIGHT && posisiKolom < 71) {
-            posisiKolom++; 
-        } else if (tombol == KEY_LEFT && posisiKolom > 1) {
-            posisiKolom--;
-        }
+        if (tombol == KEY_RIGHT && posisiKolom < 71) posisiKolom++;
+        if (tombol == KEY_LEFT && posisiKolom > 1) posisiKolom--;
 
-        // BAGIAN RANGGA
+        // ==================== BAGIAN RANGGA ====================
         // Gerak jatuh bintang dan reset posisi acak
         if (++hitunganFrame == 10) {
             hitunganFrame = 0;
             for (int i = 0; i < 5; i++) {
-                if (++barisBintang[i] == 32) {
+                if (++barisBintang[i] >= 34) {
                     barisBintang[i] = rand() % 10;
                     kolomBintang[i] = rand() % 40 + 25;
                 }
@@ -52,12 +49,12 @@ int main() {
         box(arena, 0, 0);
         mvwprintw(arena, 1, 25, "CATCH THE STARS");
 
-        // BAGIAN RANGGA
+        // ==================== BAGIAN RANGGA ====================
         // Menampilkan bintang
         for (int i = 0; i < 5; i++)
             mvwprintw(arena, barisBintang[i], kolomBintang[i], "*");
 
-        // BAGIAN FENI
+        // ==================== BAGIAN FENI ====================
         // Menampilkan wadah pemain
         mvwprintw(arena, posisiBaris, posisiKolom, "[======]");
         wrefresh(arena);
