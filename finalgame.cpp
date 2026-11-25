@@ -10,6 +10,16 @@ int main() {
     nodelay(stdscr, TRUE);
     srand(time(0));
 
+    // ============= BAGIAN ARDI ==========
+    // tampilan awal game
+    nodelay(stdscr, FALSE);
+    mvprintw(5, 32, "CATCH THE STARS!");
+    mvprintw(7, 27, "Klik tombol apa saja untuk memulai...");
+    refresh();
+    getch();
+    clear();
+    nodelay(stdscr, TRUE);
+
     // ==================== BAGIAN FENI ====================
     // Arena dan posisi wadah pemain
     WINDOW *arena = newwin(35, 80, 0, 0);
@@ -25,8 +35,19 @@ int main() {
         barisBintang[i] = rand() % 34;
         kolomBintang[i] = rand() % 40 + 25;
     }
+    // ================= BAGIAN ARDI =================
+    // timer dan score
+    int score = 0;
+    int timer = 30;
+    time_t start = time(0);
 
     do {
+        // Menghitung waktu permainan
+        timer = 30 - (time(0) - start);
+
+        if (timer <= 0) {
+            break;
+        }
         // ==================== BAGIAN FENI ====================
         // Kontrol wadah pemain
         int tombol = getch();
@@ -41,6 +62,11 @@ int main() {
         if (++hitunganFrame == 10) {
             hitunganFrame = 0;
             for (int i = 0; i < 5; i++) {
+                if (++barisBintang[i] == posisiBaris &&
+                    kolomBintang[i] >= posisiKolom &&
+                    kolomBintang[i] <= posisiKolom + 7) {
+                    score++;
+                    }
                 if (++barisBintang[i] >= 34) {
                     barisBintang[i] = rand() % 10;
                     kolomBintang[i] = rand() % 40 + 25;
@@ -50,7 +76,12 @@ int main() {
 
         werase(arena);
         box(arena, 0, 0);
-        mvwprintw(arena, 1, 25, "CATCH THE STARS");
+        mvwprintw(arena, 1, 32, "CATCH THE STARS");
+
+        // ============== BAGIAN ARDI =============
+        // tampilan timer and score 
+        mvwprintw(arena, 2, 2, "Score: %d", score);
+        mvwprintw(arena, 2, 15, "Time: %d", timer);
 
         // ==================== BAGIAN RANGGA ====================
         // Menampilkan bintang
@@ -63,6 +94,15 @@ int main() {
         wrefresh(arena);
         napms(20);
     } while (TRUE);
+
+    // ============= BAGIAN ARDI ================
+    // tampilan akhir
+    clear();
+    mvprintw(5, 5, "GAME OVER!");
+    mvprintw(7, 5, "Final Score: %d", score);
+    refresh();
+    nodelay(stdscr, FALSE);
+    getch();
 
     endwin();
     return 0;
