@@ -22,11 +22,7 @@ int main() {
             posisiKolom++;
         } else if (tombol == KEY_LEFT && posisiKolom > 1) {
             posisiKolom--;
-        } else if (tombol == KEY_UP && posisiBaris > 1) {
-            posisiBaris--;
-        } else if (tombol == KEY_DOWN && posisiBaris < 33) {
-            posisiBaris++;
-        }
+        } 
         werase(arena);
         box(arena, 0, 0);
         mvwprintw(arena, 1, 25, "CATCH THE STARS");
