@@ -6,9 +6,15 @@ int main() {
     clear();
     keypad(stdscr, TRUE);
 
+    WINDOW *arena = newwin(35, 80, 0, 0);
+
     int tombol;
     int posisiKolom = 12;
     int posisiBaris = 33;
+
+    box(arena, 0, 0);
+    mvwprintw(arena, posisiBaris, posisiKolom, "[======]");
+    wrefresh(arena);
     
     do {
         tombol = getch();
@@ -21,9 +27,10 @@ int main() {
         } else if (tombol == KEY_DOWN) {
             posisiBaris++;
         }
-        clear();
-        mvprintw (posisiBaris, posisiKolom, "[======]");
-        refresh;
+        werase(arena);
+        box(arena, 0, 0);
+        mvwprintw(arena, posisiBaris, posisiKolom, "[======]");
+        wrefresh(arena);
     } while (TRUE);
     
     endwin();
