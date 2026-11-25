@@ -5,9 +5,9 @@ int main() {
     initscr();
     clear();
     keypad(stdscr, TRUE);
-
+//p
     WINDOW *arena = newwin(35, 80, 0, 0);
-
+// apala
     int tombol;
     int posisiKolom = 12;
     int posisiBaris = 33;
@@ -36,5 +36,5 @@ int main() {
     } while (TRUE);
     
     endwin();
-    
-
+    return 0;
+}
