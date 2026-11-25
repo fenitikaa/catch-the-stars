@@ -73,6 +73,7 @@ int main() {
         werase(arena);
         box(arena, 0, 0);
         mvwprintw(arena, 1, 25, "CATCH THE STARS");
+        
         // =========== BAGIAN ARDI ==========
         //bagian tampilan timer dan score
         mvwprintw(arena 2, 2, "Score : %d", score);
@@ -89,6 +90,7 @@ int main() {
         wrefresh(arena);
         napms(20);
     } while (TRUE);
+    
         // ====================== BAGIAN ARDI ============
         // tampilan game over
         clear();
@@ -97,6 +99,7 @@ int main() {
         refresh();
         nodelay(stdscr, FALSE);
         getch();
+    
     endwin();
     return 0;
 }
