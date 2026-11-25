@@ -1,17 +1,16 @@
 //bagian ardi 
 #include <ncurses/curses.h>
 #include <ctime>
-//ga tau deh
 int main() {
     initscr();
     noecho();
 
     int score = 0;
-    int timer = 8;
+    int timer = 15;
     time_t start = time(0);
 
     while (timer > 0) {
-        timer = 8 - (time(0) - start);
+        timer = 15 - (time(0) - start);
         clear();
 
         mvprintw(2, 5, "CATCH THE STARS!");
