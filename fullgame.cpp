@@ -1,5 +1,5 @@
 //Catch The Star (Final)
-#include "ncurses.h"
+#include "ncurses/curses.h"
 using namespace std;
 int main() {
     initscr();
@@ -36,7 +36,5 @@ int main() {
     } while (TRUE);
     
     endwin();
-    return 0;
-
-}
+    
 
