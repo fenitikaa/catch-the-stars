@@ -59,7 +59,7 @@ int main() {
 
         // ==================== BAGIAN RANGGA ====================
         // Gerak jatuh bintang dan reset posisi acak
-        if (++hitunganFrame == 10) {
+        if (++hitunganFrame == 20) {
             hitunganFrame = 0;
             for (int i = 0; i < 5; i++) {
                 if (++barisBintang[i] == posisiBaris &&
