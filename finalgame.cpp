@@ -19,12 +19,11 @@ int main() {
     
     do {
         tombol = getch();
-        if (tombol == KEY_RIGHT) {
+        if (tombol == KEY_RIGHT && posisiKolom < 71) {
             posisiKolom++;
-        } else if (tombol == KEY_LEFT) {
+        } else if (tombol == KEY_LEFT && posisiKolom > 1) {
             posisiKolom--;
-        }
-
+        } 
         werase(arena);
         box(arena, 0, 0);
         mvwprintw(arena, 1, 25, "CATCH THE STARS");
