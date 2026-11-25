@@ -1,4 +1,4 @@
-
+//Coba-coba
 #include <ncurses.h>
 #include <cstdlib>
 #include <ctime>
