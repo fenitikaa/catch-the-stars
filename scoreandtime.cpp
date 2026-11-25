@@ -6,11 +6,11 @@ int main() {
     noecho();
 
     int score = 0;
-    int timer = 15;
+    int timer = 30;
     time_t start = time(0);
 
     while (timer > 0) {
-        timer = 15 - (time(0) - start);
+        timer = 30 - (time(0) - start);
         clear();
 
         mvprintw(2, 5, "CATCH THE STARS!");
