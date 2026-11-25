@@ -13,7 +13,7 @@ int main() {
     int posisiBaris = 33;
 
     box(arena, 0, 0);
-    mvwprintw(arena, 1, 25, "CATCH THE STARS");
+    mvwprintw(arena, 1, 30, "CATCH THE STARS");
     mvwprintw(arena, posisiBaris, posisiKolom, "[======]");
     wrefresh(arena);
     
@@ -24,11 +24,13 @@ int main() {
         } else if (tombol == KEY_LEFT) {
             posisiKolom--;
         }
+
         werase(arena);
         box(arena, 0, 0);
         mvwprintw(arena, 1, 25, "CATCH THE STARS");
         mvwprintw(arena, posisiBaris, posisiKolom, "[======]");
         wrefresh(arena);
+
     } while (TRUE);
     
     endwin();
