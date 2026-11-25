@@ -1,7 +1,7 @@
 //bagian ardi 
-#include <ncurses.h>
+#include <ncurses/curses.h>
 #include <ctime>
-
+//ga tau deh
 int main() {
     initscr();
     noecho();
