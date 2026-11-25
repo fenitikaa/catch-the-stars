@@ -1,4 +1,4 @@
-//KelompokTrioSugeh
+//Kelompok TrioSugeh
 #include "ncurses.h"
 #include <cstdlib>
 #include <ctime>
