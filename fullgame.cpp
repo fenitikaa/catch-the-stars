@@ -4,7 +4,7 @@ using namespace std;
 int main() {
     initscr();
     clear();
-    keypad(stdscr, TRUE);
+    keypad(stdscr, TRUE); 
 
     WINDOW *arena = newwin(35, 80, 0, 0);
 
