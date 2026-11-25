@@ -1,4 +1,4 @@
-//bagian wadah (feni)
+//KelompokTrioSugeh
 #include "ncurses.h"
 using namespace std;
 int main() {
