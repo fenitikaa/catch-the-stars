@@ -9,6 +9,11 @@ int main() {
     keypad(stdscr, TRUE);
     nodelay(stdscr, TRUE);
     srand(time(0));
+    use_default_colors();
+
+    init_pair(1, COLOR_BLUE, -1); //untuk judul
+    init_pair(2, COLOR_CYAN, -1); //untuk wadah
+    init_pair(3, COLOR_YELLOW, -1);
 
     // ============= BAGIAN ARDI ==========
     // tampilan awal game
@@ -76,8 +81,10 @@ int main() {
 
         werase(arena);
         box(arena, 0, 0);
+        wattron(arena, COLOR_PAIR(1));
         mvwprintw(arena, 1, 32, "CATCH THE STARS");
-
+        wattroff(arena, COLOR_PAIR(1));
+        
         // ============== BAGIAN ARDI =============
         // tampilan timer and score 
         mvwprintw(arena, 2, 2, "Score: %d", score);
@@ -85,12 +92,17 @@ int main() {
 
         // ==================== BAGIAN RANGGA ====================
         // Menampilkan bintang
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 5; i++) {
+            wattron(arena, COLOR_PAIR(3));
             mvwprintw(arena, barisBintang[i], kolomBintang[i], "*");
-
+            wattroff(arena, COLOR_PAIR(3));
+        }
+        
         // ==================== BAGIAN FENI ====================
         // Menampilkan wadah pemain
+        wattron(arena, COLOR_PAIR(2));
         mvwprintw(arena, posisiBaris, posisiKolom, "[======]");
+        wattroff(arena, COLOR_PAIR(2));
         wrefresh(arena);
         napms(20);
     } while (TRUE);
