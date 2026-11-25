@@ -1,4 +1,4 @@
-//Catch The Star (Full)
+//Catch The Star
 #include "ncurses/curses.h"
 #include <cstdlib>
 #include <ctime>
