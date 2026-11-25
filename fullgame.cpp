@@ -9,17 +9,16 @@ int main() {
     keypad(stdscr, TRUE);
 
     WINDOW *arena = newwin(35, 80, 0, 0);
-    //rangga
+    
     keypad(arena, TRUE);
     nodelay(arena, TRUE);
     int tinggiArena, lebarArena;
     getmaxyx(arena, tinggiArena, lebarArena);
-    //
+    
     int tombol;
     int posisiKolom = 12;
     int posisiBaris = 33;
 
-    //bagian Rangga
     srand(time(0));
     int bintangBaris[3] = {2, 7, 12};
     int bintangKolom[3] = {
@@ -27,8 +26,7 @@ int main() {
         rand() % (lebarArena - 2) + 1,
         rand() % (lebarArena - 2) + 1
     };
-    //
-
+    
     box(arena, 0, 0);
     mvwprintw(arena, 1, 5, "CATCH THE STARS");
     mvwprintw(arena, posisiBaris, posisiKolom, "[======]");
@@ -40,13 +38,9 @@ int main() {
             posisiKolom++;
         } else if (tombol == KEY_LEFT) {
             posisiKolom--;
-        } else if (tombol == KEY_UP) {
-            posisiBaris--;
-        } else if (tombol == KEY_DOWN) {
-            posisiBaris++;
-        }
+        } 
 
-        // bagian Rangga
+        
         for (int i = 0; i < 3; i++) {
             bintangBaris[i]++;
             if (bintangBaris[i] >= tinggiArena - 1) {
@@ -59,7 +53,7 @@ int main() {
         box(arena, 0, 0);
         mvwprintw(arena, 1, 25, "CATCH THE STARS");
         mvwprintw(arena, posisiBaris, posisiKolom, "[======]");
-        // bagian Rangga
+        
         for (int i = 0; i < 3; i++) {
             mvwprintw(arena, bintangBaris[i], bintangKolom[i], "*");
         }
