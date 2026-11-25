@@ -17,14 +17,14 @@ int main() {
     wrefresh(arena);
     
     do {
-        tombol = getch();
-        if (tombol == KEY_RIGHT) {
+         tombol = getch();
+        if (tombol == KEY_RIGHT && posisiKolom < 71) {
             posisiKolom++;
-        } else if (tombol == KEY_LEFT) {
+        } else if (tombol == KEY_LEFT && posisiKolom > 1) {
             posisiKolom--;
-        } else if (tombol == KEY_UP) {
+        } else if (tombol == KEY_UP && posisiBaris > 1) {
             posisiBaris--;
-        } else if (tombol == KEY_DOWN) {
+        } else if (tombol == KEY_DOWN && posisiBaris < 33) {
             posisiBaris++;
         }
         werase(arena);
