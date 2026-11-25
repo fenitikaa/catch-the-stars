@@ -30,8 +30,11 @@ int main() {
         // BAGIAN FENI
         // Kontrol wadah pemain
         int tombol = getch();
-        if (tombol == KEY_RIGHT && posisiKolom < 71) posisiKolom++;
-        if (tombol == KEY_LEFT && posisiKolom > 1) posisiKolom--;
+        if (tombol == KEY_RIGHT && posisiKolom < 71) {
+            posisiKolom++; 
+        } else if (tombol == KEY_LEFT && posisiKolom > 1) {
+            posisiKolom--;
+        }
 
         // BAGIAN RANGGA
         // Gerak jatuh bintang dan reset posisi acak
