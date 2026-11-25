@@ -5,7 +5,7 @@ int main() {
     initscr();
     clear();
     keypad(stdscr, TRUE);
-//p
+//pppp 
     WINDOW *arena = newwin(35, 80, 0, 0);
 
     int tombol;
