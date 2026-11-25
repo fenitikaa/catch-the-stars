@@ -1,5 +1,5 @@
 //bagian Rangga
-#include <ncurses.h>
+#include <ncurses/curses.h>
 #include <cstdlib>
 #include <ctime>
 int main() {
