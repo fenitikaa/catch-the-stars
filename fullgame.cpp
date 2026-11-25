@@ -3,14 +3,8 @@
 using namespace std;
 int main() {
     initscr();
-<<<<<<< HEAD
     clear(); S
-//hhhhh
-=======
-    clear();
-    keypad(stdscr, TRUE);
-    
->>>>>>> b4bf77c3f0b07113d1d8651c2e02e3bd658c88a9
+
     WINDOW *arena = newwin(35, 80, 0, 0);
 
     int tombol;
