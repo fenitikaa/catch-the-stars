@@ -21,7 +21,7 @@ int main() {
     // tampilan awal game
     nodelay(stdscr, FALSE);
     mvprintw(5, 32, "CATCH THE STARS!");
-    mvprintw(7, 27, "Klik tombol apa saja untuk memulai...");
+    mvprintw(7, 21, "Klik tombol apa saja untuk memulai...");
     refresh();
     getch();
     clear();
