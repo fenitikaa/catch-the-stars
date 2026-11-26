@@ -39,7 +39,7 @@ int main() {
     int barisBintang[5], kolomBintang[5];
 
     for (int i = 0; i < 5; i++) {
-        barisBintang[i] = rand() % 34;
+        barisBintang[i] = rand() % 32;
         kolomBintang[i] = rand() % 40 + 25;
     }
     // ================= BAGIAN ARDI =================
@@ -69,12 +69,14 @@ int main() {
         if (++hitunganFrame == 20) {
             hitunganFrame = 0;
             for (int i = 0; i < 5; i++) {
-                if (++barisBintang[i] == posisiBaris &&
+                if (++barisBintang[i] >= posisiBaris &&
                     kolomBintang[i] >= posisiKolom &&
                     kolomBintang[i] <= posisiKolom + 7) {
                     score++;
+                    barisBintang[i] = rand() % 10;
+                    kolomBintang[i] = rand() % 40 + 25
                     }
-                if (++barisBintang[i] >= 34) {
+                else if (++barisBintang[i] >= 34) {
                     barisBintang[i] = rand() % 10;
                     kolomBintang[i] = rand() % 40 + 25;
                 }
