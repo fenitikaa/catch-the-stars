@@ -66,7 +66,7 @@ int main() {
 
         // ==================== BAGIAN RANGGA ====================
         // Gerak jatuh bintang dan reset posisi acak
-        if (++hitunganFrame == 20) {
+        if (++hitunganFrame == 15) {
             hitunganFrame = 0;
             for (int i = 0; i < 5; i++) {
                 if (++barisBintang[i] >= posisiBaris &&
@@ -74,7 +74,7 @@ int main() {
                     kolomBintang[i] <= posisiKolom + 7) {
                     score++;
                     barisBintang[i] = rand() % 10;
-                    kolomBintang[i] = rand() % 40 + 25
+                    kolomBintang[i] = rand() % 40 + 25;
                     }
                 else if (barisBintang[i] >= 34) {
                     barisBintang[i] = rand() % 10;
