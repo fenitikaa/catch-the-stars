@@ -76,7 +76,7 @@ int main() {
                     barisBintang[i] = rand() % 10;
                     kolomBintang[i] = rand() % 40 + 25
                     }
-                else if (++barisBintang[i] >= 34) {
+                else if (barisBintang[i] >= 34) {
                     barisBintang[i] = rand() % 10;
                     kolomBintang[i] = rand() % 40 + 25;
                 }
